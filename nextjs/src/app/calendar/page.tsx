@@ -1,5 +1,8 @@
 import Calendar from "@/features/calendar/Calendar";
+import {getCalendarEvents} from "@/features/calendar/utils/requests";
 
-export default function Page() {
-  return <Calendar />;
+export default async function Page() {
+  const events = await getCalendarEvents();
+
+  return <Calendar events={events} />;
 }
