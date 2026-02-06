@@ -1,6 +1,12 @@
 {
     "type": "project",
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./src/Components/Calendar"
+        }
+    ],
     "require": {
         "php": ">=8.4",
         "ext-ctype": "*",
@@ -29,7 +35,8 @@
         "symfony/serializer": "7.4.*",
         "symfony/twig-bundle": "7.4.*",
         "symfony/validator": "7.4.*",
-        "symfony/yaml": "7.4.*"
+        "symfony/yaml": "7.4.*",
+        "ace/calendar-bundle": "*"
     },
     "require-dev": {
         "api-platform/schema-generator": "^5.0",

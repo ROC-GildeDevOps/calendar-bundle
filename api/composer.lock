@@ -4,8 +4,29 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a49f6928fef363e91e8092c0827b4e6",
+    "content-hash": "7d487be410c278ada8cfd30837579364",
     "packages": [
+        {
+            "name": "ace/calendar-bundle",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "./src/Components/Calendar",
+                "reference": "1dd7dbc6d790f1a39cc4ac6dd83ab3fe67f5a682"
+            },
+            "require": {
+                "php": ">=8.4"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Calendar\\": "src/"
+                }
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
         {
             "name": "api-platform/doctrine-common",
             "version": "v4.2.15",

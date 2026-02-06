@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire:      true
+        autoconfigure: true
+        public:        false
+    
+    Calendar\:
+        resource: '../src/*'
+        exclude:
+            - '../src/Dto/*'
+            - '../src/Entity/*'
+            - '../src/Enum/*'
+            - '../src/Trait/*'

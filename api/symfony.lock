@@ -1,4 +1,7 @@
 {
+    "ace/calendar-bundle": {
+        "version": "1.0.0"
+    },
     "api-platform/symfony": {
         "version": "4.0",
         "recipe": {

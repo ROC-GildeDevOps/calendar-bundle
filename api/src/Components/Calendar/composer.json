@@ -1,0 +1,13 @@
+{
+    "name": "ace/calendar-bundle",
+    "type": "symfony-bundle",
+    "version": "1.0.0",
+    "require": {
+        "php": ">=8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Calendar\\": "src/"
+        }
+    }
+}
