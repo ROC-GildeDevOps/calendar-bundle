@@ -1,4 +1,4 @@
-#syntax=docker/dockerfile:1
+#syntax=docker/dockerfile:1.7-labs
 
 # Adapted from https://github.com/dunglas/symfony-docker
 
@@ -86,6 +86,7 @@ COPY --link frankenphp/conf.d/20-app.prod.ini $PHP_INI_DIR/app.conf.d/
 
 # prevent the reinstallation of vendors at every changes in the source code
 COPY --link composer.* symfony.* ./
+COPY --link --parents src/Components/*/composer.json ./
 RUN set -eux; \
 	composer install --no-cache --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress
 

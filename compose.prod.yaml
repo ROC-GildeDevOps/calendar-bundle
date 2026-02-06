@@ -13,10 +13,15 @@ services:
     build:
       context: ./nextjs
       target: runner
+    depends_on:
+      php:
+        condition: service_healthy
     ports:
       - target: 3000
         published: ${NEXTJS_PORT:-3000}
         protocol: tcp
+    environment:
+      API_URL: http://php
 
   database:
     environment:

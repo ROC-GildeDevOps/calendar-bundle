@@ -9,3 +9,23 @@ export async function getCalendarEvents(): Promise<CalendarEvent[]> {
 
   return getCollectionMembers(data);
 }
+
+export async function createCalendarEvent(event: {
+  title: string;
+  start: string;
+  end?: string;
+  allDay: boolean;
+}): Promise<CalendarEvent> {
+  return api.post<CalendarEvent>("/calendar_events", { data: event });
+}
+
+export async function updateCalendarEvent(
+  id: string,
+  event: Partial<{ title: string; start: string; end: string; allDay: boolean }>,
+): Promise<CalendarEvent> {
+  return api.patch<CalendarEvent>(id, { data: event });
+}
+
+export async function deleteCalendarEvent(id: string): Promise<void> {
+  await api.delete(id);
+}

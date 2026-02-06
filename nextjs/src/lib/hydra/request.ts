@@ -1,8 +1,11 @@
 import axios, { type AxiosRequestConfig } from "axios";
 
 const hydraClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
-  headers: { Accept: "application/ld+json" },
+  baseURL: process.env.API_URL ?? process.env.NEXT_PUBLIC_API_URL,
+  headers: {
+    Accept: "application/ld+json",
+    "Content-Type": "application/ld+json",
+  },
 });
 
 hydraClient.interceptors.request.use((config) => {

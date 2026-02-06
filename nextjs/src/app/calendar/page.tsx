@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Calendar from "@/features/calendar/Calendar";
 import {getCalendarEvents} from "@/features/calendar/utils/requests";
 

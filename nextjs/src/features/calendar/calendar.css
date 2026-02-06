@@ -1,0 +1,206 @@
+/* Map FullCalendar CSS variables to shadcn theme tokens */
+:root {
+  --fc-border-color: var(--border);
+  --fc-page-bg-color: var(--background);
+  --fc-neutral-bg-color: var(--muted);
+  --fc-today-bg-color: var(--accent);
+  --fc-event-bg-color: var(--primary);
+  --fc-event-border-color: var(--primary);
+  --fc-event-text-color: var(--primary-foreground);
+  --fc-now-indicator-color: var(--destructive);
+}
+
+/* Toolbar buttons → shadcn button style */
+.fc .fc-button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  text-transform: none;
+  box-shadow: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.fc .fc-button:hover {
+  background-color: var(--primary);
+  opacity: 0.9;
+}
+
+.fc .fc-button:focus {
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
+  outline: none;
+}
+
+.fc .fc-button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Active / selected button state */
+.fc .fc-button-active,
+.fc .fc-button:active,
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+  background-color: var(--secondary) !important;
+  color: var(--secondary-foreground) !important;
+  border-color: var(--border) !important;
+  box-shadow: none !important;
+}
+
+/* Today button → outline variant */
+.fc .fc-today-button {
+  background-color: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.fc .fc-today-button:hover {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  opacity: 1;
+}
+
+/* Button group rounding */
+.fc .fc-button-group > .fc-button {
+  border-radius: 0;
+}
+
+.fc .fc-button-group > .fc-button:first-child {
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+
+.fc .fc-button-group > .fc-button:last-child {
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+/* Toolbar title */
+.fc .fc-toolbar-title {
+  color: var(--foreground);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Table & cell borders */
+.fc .fc-scrollgrid {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border-color: var(--border);
+}
+
+.fc td,
+.fc th {
+  border-color: var(--border);
+}
+
+/* Day headers */
+.fc .fc-col-header-cell {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+
+/* Day numbers */
+.fc .fc-daygrid-day-number {
+  color: var(--foreground);
+  font-size: 0.8125rem;
+  padding: 0.375rem 0.5rem;
+}
+
+/* Today cell */
+.fc .fc-day-today {
+  background-color: var(--accent) !important;
+}
+
+.fc .fc-day-today .fc-daygrid-day-number {
+  color: var(--accent-foreground);
+  font-weight: 600;
+}
+
+/* Other month days */
+.fc .fc-day-other .fc-daygrid-day-number {
+  color: var(--muted-foreground);
+  opacity: 0.7;
+}
+
+/* Events */
+.fc .fc-event {
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  padding: 1px 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.fc .fc-daygrid-event {
+  border-radius: var(--radius-sm);
+}
+
+.fc .fc-daygrid-dot-event {
+  color: var(--foreground);
+}
+
+.fc .fc-daygrid-dot-event .fc-event-title {
+  font-weight: 500;
+}
+
+/* Event dot */
+.fc .fc-daygrid-event-dot {
+  border-color: var(--primary);
+}
+
+/* Time grid (week/day views) */
+.fc .fc-timegrid-slot {
+  height: 2.5rem;
+}
+
+.fc .fc-timegrid-slot-label-cushion {
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+}
+
+.fc .fc-timegrid-event {
+  border-radius: var(--radius-sm);
+  border: none;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+/* "More" link */
+.fc .fc-more-link {
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.fc .fc-more-link:hover {
+  color: var(--primary);
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Popover (more events) */
+.fc .fc-popover {
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.fc .fc-popover-header {
+  background-color: var(--muted);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* Highlight on date select / hover */
+.fc .fc-highlight {
+  background-color: var(--accent);
+  opacity: 0.6;
+}
