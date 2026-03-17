@@ -11,6 +11,7 @@ import interactionPlugin, {
 import type { EventClickArg, EventDropArg } from "@fullcalendar/core";
 import type { EventResizeDoneArg } from "@fullcalendar/interaction";
 
+import { toast } from "sonner";
 import "./calendar.css";
 import CalendarEventDialog from "./components/CalendarEventDialog";
 import DeleteDialog from "@/components/DeleteDialog";
@@ -75,14 +76,17 @@ export default function Calendar({ events: initialEvents = [] }: CalendarProps) 
         setEvents((prev) =>
           prev.map((e) => (e["@id"] === editingEvent["@id"] ? updated : e)),
         );
+        toast.success("Event updated");
       } else {
         const created = await createCalendarEvent(payload);
         setEvents((prev) => [...prev, created]);
+        toast.success("Event created");
       }
       setModalOpen(false);
       setEditingEvent(null);
     } catch (error) {
       console.error("Failed to save event:", error);
+      toast.error("Failed to save event");
     }
   }
 
@@ -98,9 +102,11 @@ export default function Calendar({ events: initialEvents = [] }: CalendarProps) 
     try {
       const updated = await updateCalendarEvent(iri, payload);
       setEvents((prev) => prev.map((e) => (e["@id"] === iri ? updated : e)));
+      toast.success("Event updated");
     } catch (error) {
       console.error("Failed to update event:", error);
       info.revert();
+      toast.error("Failed to update event");
     }
   }
 
@@ -112,8 +118,10 @@ export default function Calendar({ events: initialEvents = [] }: CalendarProps) 
       setDeleteDialogOpen(false);
       setModalOpen(false);
       setEditingEvent(null);
+      toast.success("Event deleted");
     } catch (error) {
       console.error("Failed to delete event:", error);
+      toast.error("Failed to delete event");
     }
   }
 
